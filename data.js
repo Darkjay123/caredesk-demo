@@ -1,0 +1,20 @@
+const SEED=()=>{const d=new Date(),iso=o=>{const x=new Date(d);x.setDate(x.getDate()+o);return x.toISOString().slice(0,10)};
+return{seq:1043,inv:5021,patients:[
+{id:'DSH-1001',name:'Adaeze Okafor',phone:'08031234567',sex:'F',dob:'1988-04-12',blood:'O+',allergies:['Penicillin'],hmo:'Hygeia HMO',nok:'Chike Okafor (husband) 08039876543',consent:true,
+ events:[{d:iso(-40),t:'Consultation',x:'Malaria (uncomplicated). Artemether-lumefantrine prescribed.',by:'Dr. Ibe'},{d:iso(-40),t:'Lab',x:'Malaria parasite test: Positive (++)',by:'Lab'},{d:iso(-2),t:'Vitals',x:'BP 118/76, Temp 36.8°C, Pulse 78, Wt 64kg',by:'Nurse Ruth'}]},
+{id:'DSH-1002',name:'Emeka Nwosu',phone:'08051112233',sex:'M',dob:'1961-09-02',blood:'A+',allergies:[],hmo:'',nok:'Ngozi Nwosu 08050001111',consent:true,
+ events:[{d:iso(-90),t:'Consultation',x:'Hypertension review. Amlodipine 10mg daily continued.',by:'Dr. Ibe'},{d:iso(-30),t:'Vitals',x:'BP 148/94, Pulse 82, Wt 88kg',by:'Nurse Ruth'},{d:iso(-30),t:'Consultation',x:'BP above target. Added lisinopril 10mg. Review in 4 weeks.',by:'Dr. Ibe'}]},
+{id:'DSH-1003',name:'Blessing Eze',phone:'08123456789',sex:'F',dob:'1996-01-25',blood:'B+',allergies:['Sulfa drugs'],hmo:'',nok:'Mary Eze 08120000000',consent:true,
+ events:[{d:iso(-14),t:'Antenatal',x:'28 weeks. Fundal height normal. Routine drugs given.',by:'Dr. Amadi'}]},
+{id:'DSH-1004',name:'Tunde Bakare',phone:'07065554433',sex:'M',dob:'2015-06-18',blood:'O-',allergies:[],hmo:'AXA Mansard',nok:'Funke Bakare (mother) 07060001234',consent:true,
+ events:[{d:iso(-5),t:'Consultation',x:'Upper respiratory infection. Paracetamol syrup, review if fever persists.',by:'Dr. Amadi'}]},
+{id:'DSH-1005',name:'Ifeoma Chukwu',phone:'09011223344',sex:'F',dob:'1979-11-30',blood:'AB+',allergies:[],hmo:'',nok:'Obi Chukwu 09010000000',consent:true,events:[]}],
+appts:[{id:1,pid:'DSH-1002',date:iso(0),time:'09:00',clinic:'General OPD',doc:'Dr. Ibe',status:'Waiting'},{id:2,pid:'DSH-1003',date:iso(0),time:'10:30',clinic:'Antenatal',doc:'Dr. Amadi',status:'Booked'},{id:3,pid:'DSH-1001',date:iso(0),time:'11:00',clinic:'General OPD',doc:'Dr. Ibe',status:'With doctor'},{id:4,pid:'DSH-1004',date:iso(1),time:'09:30',clinic:'Paediatrics',doc:'Dr. Amadi',status:'Booked'}],
+labs:[{id:1,pid:'DSH-1002',test:'Lipid profile',status:'Pending',res:'',d:iso(0)},{id:2,pid:'DSH-1001',test:'Full blood count',status:'Pending',res:'',d:iso(0)}],
+rx:[{id:1,pid:'DSH-1002',drug:'Lisinopril 10mg',qty:30,status:'To dispense',d:iso(0)}],
+stock:[{drug:'Amlodipine 10mg',qty:420,exp:iso(210),price:50},{drug:'Lisinopril 10mg',qty:95,exp:iso(40),price:80},{drug:'Artemether-lumefantrine (Coartem)',qty:60,exp:iso(300),price:2500},{drug:'Paracetamol syrup 60ml',qty:12,exp:iso(20),price:900},{drug:'Amoxicillin 500mg',qty:250,exp:iso(365),price:120},{drug:'Ferrous sulphate',qty:18,exp:iso(150),price:30}],
+prices:{'Consultation (GP)':5000,'Consultation (Specialist)':10000,'Registration & card':2000,'Malaria parasite test':2500,'Full blood count':4500,'Lipid profile':8000,'Urinalysis':2000,'Antenatal visit':6000},
+bills:[{no:'INV-5018',pid:'DSH-1002',items:[['Consultation (Specialist)',10000],['Lipid profile',8000]],paid:0,method:'',d:iso(0)},{no:'INV-5019',pid:'DSH-1001',items:[['Consultation (GP)',5000],['Full blood count',4500]],paid:0,method:'',d:iso(0),hmo:true},{no:'INV-5020',pid:'DSH-1004',items:[['Consultation (GP)',5000]],paid:5000,method:'Online (card)',d:iso(-5)}],
+wa:[{to:'DSH-1003',msg:'Hello Blessing, this is a reminder of your Antenatal appointment today at 10:30 AM with Dr. Amadi.\nReply 1 to confirm or 2 to reschedule.',t:iso(0)+' 07:00'}],
+audit:[{t:iso(0)+' 08:02',who:'Records (Grace)',a:'Opened record DSH-1002'},{t:iso(0)+' 08:15',who:'Nurse Ruth',a:'Recorded vitals for DSH-1001'}],
+rev:[182000,214500,196000,240500,228000,265000,0]}};
